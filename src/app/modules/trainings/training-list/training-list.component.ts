@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EventService } from '../../../services/event.service';
-import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ToastService } from '../../../services/toast.service';
 import { Event } from '../../../model/Event';
 
@@ -29,14 +29,14 @@ export class TrainingListComponent implements OnInit {
   ngOnInit () {
 
     this.router.paramMap
-    .subscribe((params: Params) =>{ 
+    .subscribe((params: Params) =>{
       this.routerMonth = +params.get('month'),
       this.routerYear = +params.get('year')
   });
 
 
     this.showSpinner =true;
-    
+
     this.eventService.getEventsList()
       .subscribe(eventsList =>{
         this.eventsList = eventsList;

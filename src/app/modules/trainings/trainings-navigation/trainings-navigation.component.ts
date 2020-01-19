@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbActiveModal, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { AddTrainingComponent } from '../add-training/add-training.component';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-trainings-navigation',
@@ -12,7 +11,7 @@ export class TrainingsNavigationComponent implements OnInit {
   styles = 'none';
   closeResult: string;
   subject = 'Skill Portal:- Kindly Arrange the training';
-  
+
 
   constructor(private modalService: NgbModal) { }
 

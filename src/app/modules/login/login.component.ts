@@ -1,15 +1,7 @@
-import { Component, OnInit, OnDestroy, Output } from "@angular/core";
-// import { EmployeeAuthorizationService } from '../../services/employee-authorization.service';
+import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-// tslint:disable-next-line:import-blacklist
-import { Subscription, Observable } from "rxjs";
-
-import { HttpClient } from "@angular/common/http";
 import { AuthHelper } from "../../services/authHelper.service";
-import { EmployeeService } from "../../services/employee.service";
 import { JwtRequest } from "../../model/JwtRequest";
-import { baseIP } from "../../baseUrl";
-import { httpOptions } from "../../httpheaders";
 import { AuthenticateService } from "../../services/Authenticate.service";
 
 @Component({

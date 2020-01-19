@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { AllSubSkillService } from '../../../services/allsubskillservice.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
-import { Skill } from '../../../model/Skill';
 import { MySubSkillService } from '../../../services/mysubskillservice.service';
-import { NullTemplateVisitor } from '@angular/compiler';
 import { EmployeeSkill } from '../../../model/EmployeeSkill';
 import { MySkillService } from '../../../services/myskillservice.service';
 import { SubSkill } from '../../../model/SubSkill';

@@ -5,10 +5,14 @@ import { SkillGroup } from '../model/SkillGroup';
 import { baseUrlSkill } from '../baseUrl';
 import { catchError } from 'rxjs/operators';
 import { ErrorHandler } from './handleerror.service';
+
 @Injectable()
 export class SkillGroupService {
+
     url = baseUrlSkill + '/getallskillgroups';
+
     constructor(private httpClient: HttpClient,private handler:ErrorHandler) {}
+
     getData():Observable<SkillGroup> {
        return this.httpClient.get<SkillGroup>(this.url)
        .pipe(

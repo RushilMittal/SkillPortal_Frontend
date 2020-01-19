@@ -1,7 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { Location } from '@angular/common';
-
+import { FormGroup, FormControl } from '@angular/forms';
 import { Certification } from '../../../model/Certification';
 import { Skill } from '../../../model/Skill';
 import { AllSkillService } from '../../../services/allskillservice.service';
@@ -81,7 +79,6 @@ export class NewCertificationComponent implements OnInit {
         }
       );
   }
-
 
   gettingKeys() {
     this.keys = this.temp.keys();

@@ -1,10 +1,9 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
+import { FormGroup, FormArray, FormBuilder } from '@angular/forms';
 import { NewTraining } from '../../../model/New-Training';
 import { TrainingDomain } from '../../../model/training-domain';
 import { Validators } from '@angular/forms';
 import { AddNewTrainingService } from '../../../services/addnewtraining.service';
-import { Training } from '../../../model/Training';
 import { TrainingSession } from '../../../model/training-sessions';
 import { ToastService } from '../../../services/toast.service';
 import { EmployeeService } from '../../../services/employee.service';
@@ -33,7 +32,6 @@ export class AddTrainingComponent implements OnInit {
 
     if (this.trainingDomain != undefined) {
       console.log(this.trainingDomain);
-      // this.newTrainingForm.patchValue(this.trainingDomain.training.name)
       this.newTrainingForm = this.fb.group({
         name: [this.trainingDomain.training.name, [Validators.required, Validators.minLength(3)]],
         description: [this.trainingDomain.training.description, [Validators.required, Validators.minLength(10)]],
@@ -64,7 +62,7 @@ export class AddTrainingComponent implements OnInit {
 
   currentDate(dt: Date) {
     let dd = '';
-    let mm = '';//January is 0!  
+    let mm = '';//January is 0!
     const yyyy = dt.getFullYear();
     if (dt.getDate() < 10) {
       dd = '0' + dt.getDate();

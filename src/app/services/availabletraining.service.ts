@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions, URLSearchParams } from '@angular/http';
+import { Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/catch';
 import { HttpClient } from '@angular/common/http';
 import { TrainingDomain } from '../model/training-domain';
 import { baseUrlTraining } from '../baseUrl';
@@ -11,7 +9,7 @@ import { ErrorHandler } from './handleerror.service';
 
 @Injectable()
 export class AvailableTrainingService {
-  // private apiRoot = 'http://localhost:8000/api';
+
   apiRoot = baseUrlTraining;
   constructor(private httpClient: HttpClient, private handler: ErrorHandler) { }
 

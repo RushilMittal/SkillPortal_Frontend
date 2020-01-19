@@ -1,10 +1,6 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 import { MySkillService } from '../../../services/myskillservice.service';
-
 import { EmployeeSkill } from '../../../model/EmployeeSkill';
-import { SubSkill } from '../../../model/SubSkill';
-
 import { ToastService } from '../../../services/toast.service';
 
 @Component({

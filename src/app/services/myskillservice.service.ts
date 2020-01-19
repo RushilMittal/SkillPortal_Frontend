@@ -1,13 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
 import { EmployeeSkill } from '../model/EmployeeSkill';
 import { baseUrlSkill } from '../baseUrl';
-import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
-import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
+import { HttpClient, HttpResponse} from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { ErrorHandler } from './handleerror.service';
 import { httpOptions } from '../httpheaders';

@@ -19,7 +19,7 @@ export class FileUploadComponent implements OnInit {
   URL;
   // uploader is for modelSkill
   public uploader: FileUploader = new FileUploader({
-    
+
     authToken: 'Bearer ' + this.authHelper.getUser(),
     headers: [{
       name: 'Token',
@@ -28,10 +28,10 @@ export class FileUploadComponent implements OnInit {
     allowedMimeType: ['text/csv','application/vnd.ms-excel']
   });
 
- 
+
   constructor(private authHelper: AuthHelper,private toast:ToastService) {
- 
-      
+
+
     this.uploader.onErrorItem = ((item: FileItem, response: string, status: number, headers: ParsedResponseHeaders): any => {
       alert("Some error Occured");
     });
@@ -42,14 +42,11 @@ export class FileUploadComponent implements OnInit {
       // console.log(options);
       alert("unknown file type, only csv format supported");
     };
-    
+
     this.uploader.onCompleteItem = function (item: FileItem, response: string, status: number, headers: ParsedResponseHeaders){
       alert('Uploaded Successfully');
-    
+
     }
-    
-    
-    
   }
 
   ngOnInit() {

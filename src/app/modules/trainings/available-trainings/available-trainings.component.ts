@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { EventService } from '../../../services/event.service';
 import { Router } from '@angular/router';
-import { TrainingSession } from '../../../model/training-sessions';
-
 import { TrainingDomain } from '../../../model/training-domain';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { AvailableTrainingService } from '../../../services/availabletraining.service';

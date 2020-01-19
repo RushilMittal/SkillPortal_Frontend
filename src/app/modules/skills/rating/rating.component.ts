@@ -1,7 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, AfterViewInit } from '@angular/core';
-import { SubSkill } from '../../../model/SubSkill';
-
-import {  Router } from '@angular/router';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { EmployeeSkill } from '../../../model/EmployeeSkill';
 
 
@@ -63,7 +61,7 @@ export class RatingComponent implements OnInit {
   }
 
   onClick(ratingRecieved: number) {
-    
+
     // below function is removing the click effects , on click.
     if (this.skills.rating !== 0) {
       const activeRating = document.getElementById(this.skills.subSkill.id + '' + this.skills.rating);
@@ -97,7 +95,7 @@ export class RatingComponent implements OnInit {
       this.updateClicked.emit(this.skills);
       this.cancelClicked.emit(this.skills.subSkill.id);
     } else {
-      
+
     }
     this.originalRating = this.skills.rating;
 

@@ -1,18 +1,8 @@
 import { Injectable } from "@angular/core";
-import {
-  Http,
-  Response,
-  Headers,
-  RequestOptions,
-  URLSearchParams
-} from "@angular/http";
 import { baseUrlCertification } from "../baseUrl";
-import "rxjs/add/operator/do";
-import "rxjs/add/operator/catch";
-import "rxjs/add/operator/map";
 import { Observable } from "rxjs/Observable";
 import { EmployeeCertificate } from "../model/EmployeeCertification";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { catchError } from "rxjs/operators";
 import { ErrorHandler } from "./handleerror.service";
 import { httpOptions } from "../httpheaders";

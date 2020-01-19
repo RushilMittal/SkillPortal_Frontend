@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { SearchItem } from "../../../model/search-item";
 import { AuthHelper } from "../../../services/authHelper.service";
 import { EmployeeService } from "../../../services/employee.service";
 

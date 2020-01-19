@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-certification-navigation',
   templateUrl: './certification-navigation.component.html',
@@ -14,7 +15,7 @@ export class CertificationNavigationComponent implements OnInit {
   closeResult: string;
   open(content) {
     this.modalService.open(content).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;      
+      this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });

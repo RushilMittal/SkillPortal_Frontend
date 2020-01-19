@@ -1,19 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SearchItem } from '../../../model/search-item';
-
 import { SearchService } from '../../../services/search.service';
 import { IdService } from '../../../services/idservice.service';
 import {Router} from '@angular/router';
-
-
 import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs/Subject';
-import {
-  debounceTime, distinctUntilChanged, switchMap
-} from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Certification } from '../../../model/Certification';
-import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
 import { NewTraining } from '../../../model/New-Training';
 
 
@@ -25,7 +17,7 @@ import { NewTraining } from '../../../model/New-Training';
 export class GlobalSearchListComponent implements OnInit {
 
   @Input() filter: string;
-  // @Input() toshow: boolean;
+
   showSpinnerSkills = false;
   showSpinnerCertificate = false;
 
@@ -40,11 +32,6 @@ export class GlobalSearchListComponent implements OnInit {
   trainingitem: Observable<NewTraining[]>;
 
   constructor(private searchService: SearchService, private router: Router, private _idService: IdService) { }
-
-  // ngOnChanges(){
-  //   // remove the show from the dropwown
-  //   console.log(this.toshow);
-  // }
 
   ngOnInit() {
     this.skillitem = this.searchTerms.pipe(
@@ -66,9 +53,9 @@ export class GlobalSearchListComponent implements OnInit {
 
     this.trainingitem = this.searchTerms.pipe(
       debounceTime(500),
-  
+
         distinctUntilChanged(),
-  
+
         switchMap((term: string) => this.searchService.searchTraining(this.filter)),
       );
 

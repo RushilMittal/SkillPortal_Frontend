@@ -1,18 +1,11 @@
 import { Injectable } from "@angular/core";
-import { SubSkill } from "../model/SubSkill";
-import { EmployeeSkill } from "../model/EmployeeSkill";
 import { Observable } from "rxjs/Observable";
-import { AuthHelper } from "./authHelper.service";
-import { Headers } from "@angular/http";
 import { HttpClient } from "@angular/common/http";
 import { EmployeeDetails } from "../model/EmployeeDetail";
 import { CONFIG } from "../config/config";
 import { catchError } from "rxjs/operators";
 import { ErrorHandler } from "./handleerror.service";
 import { HttpHeaders } from "@angular/common/http";
-import { RequestOptions } from "@angular/http/src/base_request_options";
-import { HttpHeaderResponse } from "@angular/common/http/src/response";
-import { ADMINROLES } from "../config/adminRoles";
 import { Router } from "@angular/router";
 import { Role } from "../model/Role";
 import { AdminServices } from "./adminService";
@@ -22,22 +15,17 @@ const GRAPH_V1_API = CONFIG.Settings.MSGRAPH_v1_API;
 @Injectable()
 export class EmployeeService {
   public employeeDetails: EmployeeDetails;
-  private authHelperService: AuthHelper;
   private _headers = new HttpHeaders();
-  private adminRoles = ADMINROLES;
   public isAdmin = false;
   source: Role[];
 
   constructor(
     private httpClient: HttpClient,
-    private authHelper: AuthHelper,
     private handler: ErrorHandler,
     private router: Router,
     private adminService: AdminServices,
     private authenticateService: AuthenticateService
-  ) {
-    this.authHelperService = authHelper;
-  }
+  ) {}
 
   /*
    * Fetching basic user profile from the grapgh api
@@ -180,12 +168,12 @@ export class EmployeeService {
         toRecipients: [
           {
             emailAddress: {
-              address: "sdsahib95@gmail.com" as string
+              address: "rushilmittal23@gmail.com" as string
             }
           },
           {
             emailAddress: {
-              address: "sdsahib_singh@yahoo.co.in" as string
+              address: "myidrushil@live.com" as string
             }
           }
         ]
@@ -199,19 +187,6 @@ export class EmployeeService {
       .pipe(catchError(this.handler.handleError));
   }
 
-  /*
-   * Function used to fetch all the email ids of the admin.
-   * Require to read the users from group
-   * Complete it after confirmation from sir.
-   * PENDING
-   * Return array should contain items like below for proper working.
-   * {
-   *      emailAddress: {
-   *           address:
-   *               "sdsahib_singh@yahoo.co.in" as string
-   *       }
-   *  }
-   */
   getGroupEmails(): string[] {
     return null;
   }

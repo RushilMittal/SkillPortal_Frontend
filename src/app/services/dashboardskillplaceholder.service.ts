@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
 import { baseUrlSkill } from '../baseUrl';
 import { EmployeeSkillPlaceholder } from '../model/EmployeeSkillPlaceholder';
 import { HttpClient } from '@angular/common/http';

@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
-import { URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
 import { baseUrlTraining } from '../baseUrl';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
@@ -12,6 +8,7 @@ import { Event } from '../model/Event';
 
 @Injectable()
 export class EventService {
+
     apiRoot = baseUrlTraining;
 
     constructor(private httpClient: HttpClient,private handler:ErrorHandler) {

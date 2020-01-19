@@ -1,16 +1,13 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { baseUrlRole, baseUrlAdmin } from "../baseUrl";
-import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { ErrorHandler } from "./handleerror.service";
 import { SubSkill } from "../model/SubSkill";
 import { catchError } from "rxjs/operators";
 import { AuthHelper } from "./authHelper.service";
-import { Subscriber } from "rxjs";
-import { httpOptions } from "../httpheaders";
 import { Certification } from "../model/Certification";
 import { Role } from "../model/Role";
-import { RequestOptions } from "@angular/http";
 
 @Injectable()
 export class AdminServices {
@@ -23,34 +20,19 @@ export class AdminServices {
     private authHelper: AuthHelper
   ) {}
 
-  getAllAdminRoles(): Observable<Role[]> {
+  getAllAdminRoles(): Observable<Role[]>
+  {
     const url = `${this.apiRole}/adminRoles`;
-    // let token = this.authHelper.getAccessToken();
-    // let idToken = this.authHelper.getUser();
-
-    // console.log("inside the admin calls " + token);
-    // if (!this._headers.has('Authorization')) {
-    //     const graphToken = token;
-    //     this._headers = this._headers.set('Token', graphToken);
-    //     this._headers = this._headers.set('Authorization', 'Bearer ' + idToken)
-    // }
 
     return this.http
       .get(url, { headers: this._headers })
       .pipe(catchError(this.handler.handleError));
   }
-  getAllAdminSkill(): Observable<SubSkill[]> {
+
+  getAllAdminSkill(): Observable<SubSkill[]>
+  {
     const url = `${this.apiRoot}/getAllAdminSkills`;
     console.log(url);
-    // let token = this.authHelper.getAccessToken();
-    // let idToken = this.authHelper.getUser();
-
-    // console.log("inside the admin calls " + token);
-    // if (!this._headers.has("Authorization")) {
-    //   const graphToken = token;
-    //   this._headers = this._headers.set("Token", graphToken);
-    //   this._headers = this._headers.set("Authorization", "Bearer " + idToken);
-    // }
 
     return this.http
       .get(url, { headers: this._headers })

@@ -5,7 +5,9 @@ import { EmployeeService } from "./employee.service";
 @Injectable()
 
 export class IsAdminGuard implements CanActivate {
+
     constructor(private employeeService: EmployeeService) { }
+
     canActivate(): boolean {
         if (this.employeeService.checkRoleAdmin())
             return true;

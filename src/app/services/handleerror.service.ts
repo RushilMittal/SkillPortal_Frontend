@@ -5,11 +5,12 @@ import { AuthHelper } from "./authHelper.service";
 
 @Injectable()
 export class ErrorHandler{
+
     constructor(private authHelper: AuthHelper){
     }
 
     public handleError(error: HttpErrorResponse) {
-        
+
         let errors: ErrorObservable;
         if (error.error instanceof ErrorEvent) {
             // A client-side or network error occurred. Handle it accordingly.
@@ -35,7 +36,8 @@ export class ErrorHandler{
             else if (error.status === 403) {
                 errors = new ErrorObservable(
                     'Sorry,Access denied');
-            } else if (error.status === 404) {
+            }
+            else if (error.status === 404) {
                 errors = new ErrorObservable(
                     'Resource Not Found');
             }
@@ -52,7 +54,6 @@ export class ErrorHandler{
             }
 
         }
-        
 
         return errors;
     };

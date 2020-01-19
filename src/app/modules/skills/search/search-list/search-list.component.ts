@@ -1,14 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SearchItem } from '../../../../model/search-item';
-import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
 import { SearchService } from '../../../../services/search.service';
 import { Subject } from 'rxjs/Subject';
 import {
   debounceTime, distinctUntilChanged, switchMap
 } from 'rxjs/operators';
-import { SubSkill } from '../../../../model/SubSkill';
 
 
 @Component({

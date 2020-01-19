@@ -1,8 +1,7 @@
 <div>
-  
 
   <form enctype="multipart/form-data">
-    
+
     <div class="form-group">
       <input type="file" ng2FileSelect [uploader]="uploader" />
     </div>
@@ -13,15 +12,16 @@
             <strong>{{ item?.file?.name }}</strong>
           </p>
         </span>
+
         <button type="button" class="btn btn-success btn-xs ml-2 mr-2" (click)="item.upload();" [disabled]="item.isReady || item.isUploading || item.isSuccess">
           <span class="glyphicon glyphicon-upload"></span> Upload
-
         </button>
+
         <span *ngIf="item.isSuccess">
           <i fa class="fa fa-check" size=1></i>
         </span>
-        <span *ngIf="item.isError">
 
+        <span *ngIf="item.isError">
           <i fa class="fa fa-times" size=1></i>
         </span>
       </div>

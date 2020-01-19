@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, RequestOptions, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
 import { SubSkill } from '../model/SubSkill';
 import { baseUrlSkill } from '../baseUrl';
 import { HttpClient } from '@angular/common/http';
@@ -17,9 +15,6 @@ export class MySubSkillService {
     const url = `${this.apiRoot}/getSubSkillsBySkill?skillName=${skillId}`;
     return this.http.get(url)
       .catch(this.handleError);
-
-
-
   }
 
   getEmployeeSubSkillById(subSkillId: string): Observable<SubSkill> {
@@ -27,7 +22,6 @@ export class MySubSkillService {
     return this.http.get(url)
       .catch(this.handleError);
   }
-
 
   private handleError(error: any): Observable<any> {
     console.error(error);

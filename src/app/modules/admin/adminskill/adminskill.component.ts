@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminServices } from '../../../services/adminService';
-import { Ng2SmartTableModule, LocalDataSource } from 'ng2-smart-table';
 import { SubSkill } from '../../../model/SubSkill';
-import { AllSkillService } from '../../../services/allskillservice.service';
 import { ToastService } from '../../../services/toast.service';
-import { NgbActiveModal, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-adminskill',

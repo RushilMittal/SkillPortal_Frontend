@@ -1,10 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import "../config/rxjs-extensions";
-import { CONFIG } from "../config/config";
 import { JwtHelper } from "./JwtHelper";
 
-const CONFIGS = CONFIG.Settings;
+
 @Injectable()
 export class AuthHelper {
   public access_token = null;
@@ -19,28 +17,7 @@ export class AuthHelper {
     console.log("Login called");
     // Calling the login page.
     this.router.navigate(["/login"]);
-    //
-    // return this.app.loginRedirect(CONFIGS.SCOPES).then(
-    //   idToken => {
-    //     this.app.acquireTokenSilent(CONFIGS.SCOPES).then(
-    //       accessToken => {
-    //         this.access_token = accessToken;
-    //         this.user = this.app.getUser(); // AZURE AD
-    //         this.isAuthenticated = true;
-    //         this.refreshToken("Access Token", accessToken);
-    //       },
-    //       error => {
-    //         this.app.acquireTokenPopup(CONFIGS.SCOPES).then(accessToken => {
-    //           console.log("Error acquiring the popup:\n" + error);
-    //         });
-    //       }
-    //     );
-    //     console.log("user token " + this.user.idToken);
-    //   },
-    //   error => {
-    //     console.log("Error during login:\n" + error);
-    //   }
-    // );
+
   }
 
   public getUser(): string {

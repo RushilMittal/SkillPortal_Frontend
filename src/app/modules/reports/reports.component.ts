@@ -6,7 +6,6 @@ import { SkillReport } from '../../model/skillreport';
 import { ReportService } from '../../services/report.service';
 import { BaseChartDirective } from 'ng2-charts';
 import { Ng2SmartTableComponent } from 'ng2-smart-table/ng2-smart-table.component';
-import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import { Angular2Csv } from 'angular2-csv/Angular2-csv';
 
 @Component({
@@ -33,7 +32,7 @@ export class ReportsComponent implements OnInit {
   employeeId:string="101";
 
   public chartColors: any[] = [
-    { 
+    {
       backgroundColor:"#FF7360",
       borderColor: 'rgba(148,159,177,1)',
       pointBackgroundColor: 'rgba(148,159,177,1)',
@@ -58,7 +57,7 @@ export class ReportsComponent implements OnInit {
       }]
     }
   };
-  
+
   chartData2 = [
     { data: [350, 600], label: 'Whatever subskill' },
   ];
@@ -66,7 +65,7 @@ export class ReportsComponent implements OnInit {
   chartLabels = ['1', '2',];
 
   settings : any;
-  
+
   rows:any[];
 
   constructor(private reportService:ReportService) { }
@@ -80,7 +79,7 @@ export class ReportsComponent implements OnInit {
       vin: '1',
       year: 'title test1'
     }];
-  
+
     this.settings= { actions: false,
       columns:{
       vin: {title: 'ID' },
@@ -102,7 +101,7 @@ export class ReportsComponent implements OnInit {
 
   reportSetter(n:number)
   {
-    let i;  
+    let i;
     for(i=0;i<5;i++)
     {
       this.reportType[i]=false;
@@ -132,14 +131,14 @@ export class ReportsComponent implements OnInit {
           this.chart.colors = this.chartColors;
           this.chart.chart.update();
 
-          this.settings ={actions: false, 
+          this.settings ={actions: false,
                                  columns:  { subSkillName: {title: 'SubSkill'},
                                     noOfRatedUsers: {title: 'Number of Rated Users'},
                                   },
                                   pager : {
                                     display : true,
                                     perPage:10
-                                  }  };               
+                                  }  };
                  this.rows=[];
                  for(let topSubSkill of this.topSubSkills)
                  {
@@ -167,14 +166,14 @@ export class ReportsComponent implements OnInit {
                  this.chart.chart.config.data.datasets=this.chartData2;
                  this.chart.chart.update();
 
-                 this.settings ={actions: false, 
+                 this.settings ={actions: false,
                                  columns:  { subSkillName: {title: 'SubSkill'},
                                     noOfRatedUsers: {title: 'Number of Rated Users'},
                                   },
                                   pager : {
                                     display : true,
                                     perPage:10
-                                  }  };               
+                                  }  };
                  this.rows=[];
                  for(let topSubSkill of this.topSubSkills)
                  {
@@ -195,7 +194,7 @@ export class ReportsComponent implements OnInit {
         empskills => this.employeeSkills=empskills,
         error=>console.log("error"),
         () =>  {
-                 this.settings ={actions: false, 
+                 this.settings ={actions: false,
                                  columns:  { subSkillName: {title: 'SubSkill'},
                                     rating: {title: 'Rating'},
                                     lastModified: {title: 'Date'}
@@ -203,7 +202,7 @@ export class ReportsComponent implements OnInit {
                                   pager : {
                                     display : true,
                                     perPage:10
-                                  }  };               
+                                  }  };
                  console.log(this.employeeSkills);
                  this.rows=[];
                  for(let employeeSkill of this.employeeSkills)
@@ -216,7 +215,7 @@ export class ReportsComponent implements OnInit {
                  }
                }
             );
-        
+
     }
 
     if(skillReportType==5)
@@ -231,7 +230,7 @@ export class ReportsComponent implements OnInit {
         empcerts => this.employeeCerts=empcerts,
         error=>console.log("error"),
         () =>  {
-                this.settings ={actions: false, 
+                this.settings ={actions: false,
                                  columns:  { empId: {title: 'Employee ID'},
                                     certificate: {title: 'Certificate'},
                                     expiringOn: {title: 'Expiring On'}
@@ -262,7 +261,7 @@ export class ReportsComponent implements OnInit {
         skillupdated => this.skillUpdated=skillupdated,
         error=>console.log("error"),
         () =>  {
-                this.settings ={actions: false, 
+                this.settings ={actions: false,
                                  columns:  { empId: {title: 'Employee ID'},
                                     subSkillId: {title: 'SubSkill'},
                                     minDate: {title: 'Rated First On'},
@@ -300,7 +299,7 @@ export class ReportsComponent implements OnInit {
     }
   console.log(anarray);
    new Angular2Csv(anarray,"Report",{headers: (headers)});
-   
+
   }
 
   downloadCanvas(event) {

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
-import { Skill } from '../model/Skill';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
 @Injectable()
 export class IdService {
     private subject = new BehaviorSubject<number>(1);

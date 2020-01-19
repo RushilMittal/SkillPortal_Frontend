@@ -1,4 +1,4 @@
-import { baseURLAPP } from "../baseUrl";
+
 
 export let CONFIG = {
     Settings: {
@@ -7,7 +7,7 @@ export let CONFIG = {
       TENANT: 'ALLEGIS CLOUD',
       TENANT_ID: '371cb917-b098-4303-b878-c182ec8403ac', // found in Azure->Active Directory->Properties Pane, TennantID = Directory ID
       AUTHORITY: 'https://login.microsoftonline.com/371cb917-b098-4303-b878-c182ec8403ac',
-  
+
       RESPONSE_TYPE: 'id_token',
       RESPONSE_MODE: 'id_token',
       STATE: '',
@@ -20,4 +20,3 @@ export let CONFIG = {
       ADMIN_CONSENT: true
     }
   };
-  

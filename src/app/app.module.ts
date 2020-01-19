@@ -1,5 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule, Renderer2 } from "@angular/core";
+import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { PageNotFoundComponent } from "./page-not-found.component";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
@@ -49,10 +49,8 @@ import { SkillGroupComponent } from "./modules/skills/skillgroup/skillgroup.comp
 import { SkillGroupService } from "./services/SkillGroupService.service";
 import { SearchTransformPipe } from "./modules/search-transform.pipe";
 
-import { LocationStrategy, HashLocationStrategy } from "@angular/common";
 
 import { TokenInterceptor } from "./Token.interceptor";
-import { RedirectComponent } from "./redirect/redirect.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { TrainingListPipe } from "./modules/trainings/training-list/training-list-pipe.pipe";
 import { AddTrainingComponent } from "./modules/trainings/add-training/add-training.component";
@@ -67,12 +65,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AvailableTrainingService } from "./services/availabletraining.service";
 import { Ng2IziToastModule } from "ng2-izitoast";
 import { ToastService } from "./services/toast.service";
-import { query } from "@angular/animations";
 import { ErrorHandler } from "./services/handleerror.service";
 import { AvailableTrainingPipe } from "./modules/trainings/available-trainings/available-trainings-pipe.pipe";
 import { AuthHelper } from "./services/authHelper.service";
 import { EmployeeService } from "./services/employee.service";
-import { EncrptionService } from "./services/encryption.service";
 
 import { ReportsComponent } from "./modules/reports/reports.component";
 import { ChartsModule } from "ng2-charts/ng2-charts";
@@ -104,7 +100,6 @@ import { RegisterComponent } from './modules/register/register.component';
     AvailableCertificationsComponent,
     AddCertificationComponent,
     NewCertificationComponent,
-    RedirectComponent,
 
     // for DashBoard feature
     NotificationMarqueeComponent,
@@ -171,7 +166,6 @@ import { RegisterComponent } from './modules/register/register.component';
     AuthHelper,
     AuthenticateService,
     EmployeeService,
-    EncrptionService,
     // Providers for certification Services
     MyCertificationService,
     AllCertificationService,

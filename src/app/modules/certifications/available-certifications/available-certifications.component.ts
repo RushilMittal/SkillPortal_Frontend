@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 import { AllCertificationService } from '../../../services/allcertification.service';
 import { Certification } from '../../../model/Certification';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
@@ -20,18 +19,15 @@ export class AvailableCertificationsComponent implements OnInit {
   showSpinner = false;
   activeId: string;
   closeResult: string;
-  
+
   constructor(private allCertificationService: AllCertificationService,
     private modalService: NgbModal,
     private router: Router,
-    private employeeDetailService:EmployeeService) { 
+    private employeeDetailService:EmployeeService) {
       this.getAllCertificate();
-
     }
 
   ngOnInit() {
-
-   
 
   }
 
@@ -41,7 +37,7 @@ export class AvailableCertificationsComponent implements OnInit {
     }
     return false;
   }
-  
+
   open(content) {
     this.modalService.open(content).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;

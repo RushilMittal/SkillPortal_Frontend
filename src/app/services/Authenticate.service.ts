@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { baseIP } from "../baseUrl";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { catchError } from "rxjs/operators";
 import { ErrorHandler } from "./handleerror.service";
 import { httpOptions } from "../httpheaders";
@@ -10,9 +10,11 @@ import { EmployeeDetails } from "../model/EmployeeDetail";
 
 @Injectable()
 export class AuthenticateService {
+
   url = baseIP + "/authenticate";
   registerURL = baseIP + "/register";
   employeeDetailsURL = baseIP + "/getEmployeeDetail";
+
   constructor(private http: HttpClient, private handler: ErrorHandler) {}
 
   callAuthenticate(jwtRequest: JwtRequest): Observable<any> {

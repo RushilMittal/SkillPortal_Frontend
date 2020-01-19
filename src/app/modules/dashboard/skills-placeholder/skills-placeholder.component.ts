@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DashboardLayoutComponent } from '../dashboard-layout/dashboard-layout.component';
 
 import { EmployeeSkillPlaceholder } from '../../../model/EmployeeSkillPlaceholder';
 import { DashBoardSkillPlaceHolderService } from '../../../services/dashboardskillplaceholder.service';
@@ -10,10 +9,7 @@ import { DashBoardSkillPlaceHolderService } from '../../../services/dashboardski
   styleUrls: ['./skills-placeholder.component.css']
 })
 export class SkillsPlaceholderComponent implements OnInit {
-  //    highestRatedSkill: String;
-  //    totalRated: number;
-  //    highestRating:number;
-  //    period: number[];
+
   year: number;
   month: number;
   day: number;
@@ -42,10 +38,5 @@ export class SkillsPlaceholderComponent implements OnInit {
       },
       () => { }
       );
-
-
   }
-
-
-
 }

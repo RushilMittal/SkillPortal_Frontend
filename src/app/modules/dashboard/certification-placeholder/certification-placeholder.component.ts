@@ -29,7 +29,6 @@ export class CertificationPlaceholderComponent implements OnInit {
         () => { }
     );
 
-
   }
 
   }

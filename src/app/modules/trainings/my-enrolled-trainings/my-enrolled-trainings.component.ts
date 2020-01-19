@@ -1,7 +1,4 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { CalendarComponent } from 'ap-angular2-fullcalendar/src/calendar/calendar';
-import { Options } from 'fullcalendar';
-import { EventService } from '../../../services/event.service';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({

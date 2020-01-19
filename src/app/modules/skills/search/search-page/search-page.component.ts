@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Http} from '@angular/http';
 import { Location } from '@angular/common';
-import {Observable} from 'rxjs/Observable';
-import { SearchItem } from '../../../../model/search-item';
-import { NgModel } from '@angular/forms';
-import 'rxjs/add/operator/map';
 
 @Component({
  selector: 'app-search-page',
@@ -19,7 +14,6 @@ export class SearchPageComponent implements OnInit {
  }
 
 filter: string;
-
 
 goBack(): void {
   this.location.back();
